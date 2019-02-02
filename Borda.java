@@ -8,10 +8,6 @@ public class Borda extends RankedChoiceMethod{
         // TODO Auto-generated constructor stub
     }
 
-    public static void main(String[] args){
-       
-    }
-
     @Override
     public int getWinner() {
         int numCandidates = super.getCandidates().length;
