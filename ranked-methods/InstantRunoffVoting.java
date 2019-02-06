@@ -1,11 +1,11 @@
-package deh.methods;
+package dh.methods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
 
-import deh.ballot.RankedChoiceBallot;
+import dh.ballot.RankedChoiceBallot;
 
 public class InstantRunoffVoting extends RankedChoiceMethod{
     public InstantRunoffVoting(RankedChoiceBallot[] ballots, String[] candidateList) {
