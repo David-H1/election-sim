@@ -1,14 +1,14 @@
-package deh.methods;
+package dh.methods;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import deh.ballot.RankedChoiceBallot;
+import dh.ballot.RankedChoiceBallot;
 
 /*
  * This method outlines the format for a Ranked Choice Method, and contains some
- * useful methods for calculating 
+ * useful methods for common first steps in determining the winner. 
  */
 
 public abstract class RankedChoiceMethod{
