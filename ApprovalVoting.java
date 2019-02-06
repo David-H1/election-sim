@@ -1,6 +1,6 @@
-package deh.methods;
+package dh.methods;
 
-import deh.ballot.ScoreBallot;
+import dh.ballot.ScoreBallot;
 
 public class ApprovalVoting extends RatingMethod{
 
