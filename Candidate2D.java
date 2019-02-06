@@ -1,4 +1,4 @@
-package deh.graphic;
+package dh.graphic;
 
 import java.awt.Color;
 /*
