@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import dh.ballot.RankedChoiceBallot;
 
 /*
- * This method outlines the format for a Ranked Choice Method, and contains some
+ * This class outlines the format for a Ranked Choice Method, and contains some
  * useful methods for common first steps in determining the winner. 
  */
 
@@ -77,31 +77,6 @@ public abstract class RankedChoiceMethod{
                     pairwiseTable[rankedCandidate][candsLeft.get(j)]++;//Add one to the count of ballots saying that they prefer the just-found candidate to every candidate that has not been seen on this ballot.
                 }
             }
-        }
-        return pairwiseTable;
-    }
-    
-    public int[][] verboseThisPairwiseTable(){//Tool for condorcet methods
-    	//[i][j] of the output 2D int array is the number of ballots that rank candidate i above candidate j.
-        int[][] pairwiseTable = new int[candidates.length][candidates.length];
-        ArrayList<Integer> candidatesLeft = new ArrayList<Integer>();//This lists the index numbers of all the candidates.
-        for(int i = 0; i < candidates.length; i++) {
-        	candidatesLeft.add(i); //Add each index number to the list.
-        }
-        for(int i = 0; i < this.votes.length; i++) { //For each vote in the list of votes.
-        	System.out.print(i + ": ");
-        	Iterator<Integer> reader = this.votes[i].getRanking().iterator();//Tells you which candidate is next on this ballot.
-            System.out.print(this.votes[i].toString() + " ");
-        	ArrayList<Integer> candsLeft = (ArrayList<Integer>) candidatesLeft.clone();//Copy the list of index numbers. This copied list represents which candidates have not been seen.
-            while(reader.hasNext()) {//While there are still rankings on the ballot.
-            	int rankedCandidate = reader.next(); //Get the next ranked candidate.
-                System.out.print(rankedCandidate + " ");
-            	candsLeft.remove(new Integer(rankedCandidate));//Since we now have found this candidate, remove them from the list of candidates that have not been seen on this ballot.
-                for(int j = 0; j < candsLeft.size(); j++) {
-                    pairwiseTable[rankedCandidate][candsLeft.get(j)]++;//Add one to the count of ballots saying that they prefer the just-found candidate to every candidate that has not been seen on this ballot.
-                }
-            }
-            System.out.println(": " + i);
         }
         return pairwiseTable;
     }
