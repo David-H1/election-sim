@@ -1,10 +1,10 @@
-package election.methods;
+package deh.methods;
 
-import election.ballot.ScoreBallot;
+import deh.ballot.ScoreBallot;
 
 public class ScoreVoting extends RatingMethod{
-	public ScoreVoting(ScoreBallot[] ballots, String[] candidateList) {
-        super(ballots, candidateList, 0, 100);
+	public ScoreVoting(ScoreBallot[] ballots, String[] candidateList, int minScore, int maxScore) {
+        super(ballots, candidateList, minScore, maxScore);
     }
 
     @Override
