@@ -1,4 +1,4 @@
-package deh.methods;
+package election.methods;
 
 import deh.ballot.ScoreBallot;
 
