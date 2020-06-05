@@ -1,4 +1,4 @@
-package dh.ballot;
+package election.ballot;
 
 import java.util.List;
 import java.util.ArrayList;
