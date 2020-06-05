@@ -31,7 +31,7 @@ public class ScoreYeePicture extends Canvas{
 
         Candidate2D[] candidates = {yellow, blue, red, green};
         
-        ScoreVoting method = new ScoreVoting(null, null);//Replace this with some other rated voting method.
+        RatingMethod method = new ScoreVoting(null, null);//Replace this with some other rated voting method.
         System.out.println(Arrays.toString(candidates));
         ScoreYeePicture image = new ScoreYeePicture("Yee Picture", 220, 220, candidates, 2000, 100, method);
        
