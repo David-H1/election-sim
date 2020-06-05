@@ -117,7 +117,7 @@ public class ScoreYeePicture extends Canvas{
         reader.nextLine();
     }
     public int[] utilToScoreBallot(double[] distancesToCandidates, int minScore, int maxScore) {
-    	//Scales so that min is the worst candidate, max is the best candidate, and util is 1/sqrt(12000+Distance²)
+    	//Scales so that min is the worst candidate, max is the best candidate, and util is 1/sqrt(12000+Distance²) (this formula taken from IEVS).
     	int[] scores = new int[distancesToCandidates.length];
         double[] distances = distancesToCandidates.clone();
         double[] utility = new double[distances.length];
@@ -133,6 +133,7 @@ public class ScoreYeePicture extends Canvas{
         return scores;
     }
     
+    //I am less confident about this code. The only system that I've used this code for is Distributed Voting, and sometimes when testing DV, the graphics freeze.
     public int[] utilToCumulBallot(double[] distancesToCandidates, int totalPoints) {
     	double[] distances = distancesToCandidates.clone();
         double[] utility = new double[distances.length];
