@@ -1,8 +1,8 @@
-package dh.methods;
+package election.methods;
 
 import java.util.LinkedList;
 
-import dh.ballot.RankedChoiceBallot;
+import election.ballot.RankedChoiceBallot;
 
 public class CycleFreeCondorcet extends RankedChoiceMethod{
 	public CycleFreeCondorcet(RankedChoiceBallot[] ballots, String[] candidateList) {
