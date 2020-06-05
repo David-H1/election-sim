@@ -1,8 +1,8 @@
-package dh.methods;
+package election.methods;
 
 import java.util.Random;
 
-import dh.ballot.RankedChoiceBallot;
+import election.ballot.RankedChoiceBallot;
 
 public class ForAndAgainst extends RankedChoiceMethod{
 
