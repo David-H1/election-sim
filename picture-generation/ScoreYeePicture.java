@@ -1,4 +1,4 @@
-package election.graphic;
+package deh.graphic;
 
 import java.awt.*;
 
@@ -13,9 +13,10 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Queue;
 
-import election.ballot.*;
-import election.methods.*;
+import deh.ballot.*;
+import deh.methods.*;
 
+//Methods: 1.IRV 2.TopNThreshold 3.Borda 4. Dumb approval 5. Plurality 6. Cycle Free Condorcet 7. Linear Utility Score
 public class ScoreYeePicture extends Canvas{
     public static void main(String[] args) {
     	Random positionGen = new Random();
@@ -31,7 +32,7 @@ public class ScoreYeePicture extends Canvas{
 
         Candidate2D[] candidates = {yellow, blue, red, green};
         
-        RatingMethod method = new ScoreVoting(null, null);//Replace this with some other rated voting method.
+        RatingMethod method = new ScoreVoting(null, null, 0, 100);//Replace this with some other rated voting method.
         System.out.println(Arrays.toString(candidates));
         ScoreYeePicture image = new ScoreYeePicture("Yee Picture", 220, 220, candidates, 2000, 100, method);
        
@@ -92,9 +93,9 @@ public class ScoreYeePicture extends Canvas{
                     }
                     distancesToCandidatesByVoter[ballot] = distancesToCandidates;
                     int[] voterBallot = utilToScoreBallot(distancesToCandidates, method.getMin(), method.getMax());
-                    //int[] voterBallot = utilToCumulBallot(distancesToCandidates, 100);//new
+                    //int[] voterBallot = utilToCumulBallot(distancesToCandidates, method.getMax());
                     ScoreBallot vote = new ScoreBallot(voterBallot, candNames, method.getMin(), method.getMax());
-                    //ScoreBallot vote = new ScoreBallot(voterBallot, candNames, 0, 100);
+                    //ScoreBallot vote = new ScoreBallot(voterBallot, candNames, 0, method.getMax());
                     box[ballot] = vote;
                 }
                 method.setCandidates(candNames);
@@ -117,7 +118,7 @@ public class ScoreYeePicture extends Canvas{
         reader.nextLine();
     }
     public int[] utilToScoreBallot(double[] distancesToCandidates, int minScore, int maxScore) {
-    	//Scales so that min is the worst candidate, max is the best candidate, and util is 1/sqrt(12000+DistanceÂ²) (this formula taken from IEVS).
+    	//Scales so that min is the worst candidate, max is the best candidate, and util is 1/sqrt(12000+Distance²)
     	int[] scores = new int[distancesToCandidates.length];
         double[] distances = distancesToCandidates.clone();
         double[] utility = new double[distances.length];
@@ -133,7 +134,6 @@ public class ScoreYeePicture extends Canvas{
         return scores;
     }
     
-    //I am less confident about this code. The only system that I've used this code for is Distributed Voting, and sometimes when testing DV, the graphics freeze.
     public int[] utilToCumulBallot(double[] distancesToCandidates, int totalPoints) {
     	double[] distances = distancesToCandidates.clone();
         double[] utility = new double[distances.length];
