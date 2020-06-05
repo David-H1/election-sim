@@ -1,6 +1,6 @@
-package deh.methods;
+package election.methods;
 
-import deh.ballot.ScoreBallot;
+import election.ballot.ScoreBallot;
 
 public class StarVoting extends RatingMethod{
 	public StarVoting(ScoreBallot[] ballots, String[] candidateList) {
