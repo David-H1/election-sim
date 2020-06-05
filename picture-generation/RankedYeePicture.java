@@ -1,4 +1,4 @@
-package deh.graphic;
+package election.graphic;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
