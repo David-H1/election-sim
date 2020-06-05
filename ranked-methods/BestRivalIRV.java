@@ -1,8 +1,8 @@
-package dh.methods;
+package election.methods;
 
 import java.util.Arrays;
 
-import dh.ballot.RankedChoiceBallot;
+import election.ballot.RankedChoiceBallot;
 
 public class BestRivalIRV extends RankedChoiceMethod{
 
