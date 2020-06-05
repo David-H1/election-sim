@@ -24,7 +24,7 @@ public class RankedYeePicture extends Canvas{
     	//Candidate2D[] candidates = {yellow, blue};
         Candidate2D[] candidates = {yellow, blue, red, green};
         
-        CycleFreeCondorcet method = new CycleFreeCondorcet(null, null);
+        RankedChoiceMethod method = new CycleFreeCondorcet(null, null);
     	
         System.out.println(Arrays.toString(candidates));
         RankedYeePicture image = new RankedYeePicture("Yee Picture", 220, 220, candidates, 500, 100, method);
