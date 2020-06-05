@@ -1,4 +1,4 @@
-package dh.graphic;
+package election.graphic;
 
 import java.awt.Color;
 /*
