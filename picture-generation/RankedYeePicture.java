@@ -10,8 +10,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
-import deh.ballot.*;
-import deh.methods.*;
+import election.ballot.*;
+import election.methods.*;
 
 public class RankedYeePicture extends Canvas{
     public static void main(String[] args) {
