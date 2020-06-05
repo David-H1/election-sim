@@ -125,12 +125,12 @@ public class RankedYeePicture extends Canvas{
                 method.setVotes(box);
                 int winner = method.getWinner();
                 
-                //If there was no winner, then color it black.
-                if (winner != -1) {
+                
+                if (winner != -1) { //Color the picture based on the color of the winning candidate.
                 	brush.setColor(candidates[winner].getColor());
                     brush.drawOval(x,y,1,1);
                 }
-                else {//Color the picture based on the color of the winning candidate.
+                else { //If there was no winner, then color it black.
                 	brush.setColor(Color.BLACK);
                 	brush.drawOval(x,y,1,1);
                 }
