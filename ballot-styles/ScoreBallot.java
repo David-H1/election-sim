@@ -1,4 +1,4 @@
-package deh.ballot;
+package election.ballot;
 
 public class ScoreBallot{
     int[] scores;//The order of scores corresponds to the order of candidates.
