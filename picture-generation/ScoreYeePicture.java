@@ -1,4 +1,4 @@
-package deh.graphic;
+package election.graphic;
 
 import java.awt.*;
 
@@ -13,8 +13,8 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Queue;
 
-import deh.ballot.*;
-import deh.methods.*;
+import election.ballot.*;
+import election.methods.*;
 
 //Methods: 1.IRV 2.TopNThreshold 3.Borda 4. Dumb approval 5. Plurality 6. Cycle Free Condorcet 7. Linear Utility Score
 public class ScoreYeePicture extends Canvas{
@@ -118,7 +118,7 @@ public class ScoreYeePicture extends Canvas{
         reader.nextLine();
     }
     public int[] utilToScoreBallot(double[] distancesToCandidates, int minScore, int maxScore) {
-    	//Scales so that min is the worst candidate, max is the best candidate, and util is 1/sqrt(12000+Distance²)
+    	//Scales so that min is the worst candidate, max is the best candidate, and util is 1/sqrt(12000+DistanceÂ²)
     	int[] scores = new int[distancesToCandidates.length];
         double[] distances = distancesToCandidates.clone();
         double[] utility = new double[distances.length];
