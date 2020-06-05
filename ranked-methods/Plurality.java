@@ -1,6 +1,6 @@
-package dh.methods;
+package election.methods;
 
-import dh.ballot.RankedChoiceBallot;
+import election.ballot.RankedChoiceBallot;
 
 public class Plurality extends RankedChoiceMethod{
 
