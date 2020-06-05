@@ -13,10 +13,9 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Queue;
 
-import deh.ballot.*;
-import deh.methods.*;
+import election.ballot.*;
+import election.methods.*;
 
-//Methods: 1.IRV 2.TopNThreshold 3.Borda 4. Dumb approval 5. Plurality 6. Cycle Free Condorcet 7. Linear Utility Score
 public class ScoreYeePicture extends Canvas{
     public static void main(String[] args) {
     	Random positionGen = new Random();
