@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import deh.ballot.RankedChoiceBallot;
+import election.ballot.RankedChoiceBallot;
 
 /*
  * This method outlines the format for a Ranked Choice Method, and contains some
