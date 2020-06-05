@@ -1,6 +1,6 @@
 package election.methods;
 
-import deh.ballot.ScoreBallot;
+import election.ballot.ScoreBallot;
 
 public class ScoreVoting extends RatingMethod{
 	public ScoreVoting(ScoreBallot[] ballots, String[] candidateList) {
