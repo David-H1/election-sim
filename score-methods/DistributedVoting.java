@@ -31,7 +31,7 @@ public class DistributedVoting extends RatingMethod{
 					minScore = scores[j];
 				}
 			}
-			System.out.print(scores[0] + " " + scores[1] + " " + scores[2] + " " + scores[3] + "\n");
+			//System.out.print(scores[0] + " " + scores[1] + " " + scores[2] + " " + scores[3] + "\n");
 			scores[lastPlace] = -1.0;
 			for(double[] vote : ballotCopy) {
 				double loserScore = vote[lastPlace];
