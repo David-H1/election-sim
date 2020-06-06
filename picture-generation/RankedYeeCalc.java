@@ -1,5 +1,6 @@
 package election.graphic;
 
+import java.awt.Color;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
