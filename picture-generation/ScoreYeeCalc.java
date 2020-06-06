@@ -25,7 +25,7 @@ public class ScoreYeeCalc{
 
         Candidate2D[] candidates = {yellow, blue, red, green};
         
-        RatingMethod method = new DistributedVoting(null, null, 100);//Replace this with some other rated voting method.
+        RatingMethod method = new StarVoting(null, null);//Replace this with some other rated voting method.
         System.out.println(Arrays.toString(candidates));
         ScoreYeeCalc image = new ScoreYeeCalc(220, 220, candidates, 20000, 100, method);
     }
@@ -62,10 +62,10 @@ public class ScoreYeeCalc{
                         distancesToCandidates[i] = Math.sqrt(Math.pow(voterXPos-candidates[i].getXPosition(), 2.0) + Math.pow(voterYPos-candidates[i].getYPosition(), 2.0));
                     }
                     distancesToCandidatesByVoter[ballot] = distancesToCandidates;
-                    //int[] voterBallot = utilToScoreBallot(distancesToCandidates, method.getMin(), method.getMax());
-                    int[] voterBallot = utilToCumulBallot(distancesToCandidates, method.getMax());
-                    //ScoreBallot vote = new ScoreBallot(voterBallot, candNames, method.getMin(), method.getMax());
-                    ScoreBallot vote = new ScoreBallot(voterBallot, candNames, 0, method.getMax());
+                    int[] voterBallot = utilToScoreBallot(distancesToCandidates, method.getMin(), method.getMax()); //For cumulative ballots, comment this line
+                    //int[] voterBallot = utilToCumulBallot(distancesToCandidates, method.getMax()); // For cumumlative ballots, uncomment this line
+                    ScoreBallot vote = new ScoreBallot(voterBallot, candNames, method.getMin(), method.getMax()); //For cumulative ballots, comment this line
+                    //ScoreBallot vote = new ScoreBallot(voterBallot, candNames, 0, method.getMax()); //For cumulative ballots, uncomment this line
                     box[ballot] = vote;
                 }
                 method.setCandidates(candNames);
